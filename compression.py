@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog as fd
+import traceback
 
 def error(errormsg):
     #Start of GUI
@@ -8,13 +9,16 @@ def error(errormsg):
     root4.resizable(False, False)
 
     #A label
-    label = tk.Label(master=root4, width=20, height=2, text="Error:")
+    label = tk.Label(master=root4, width=30, height=2, text="Error:")
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
 
-    #Error label
-    label1 = tk.Label(master=root4, width=20, height=2, text=errormsg)
-    label1.grid(row=1, column=0, sticky="nsew")
+    #Content area
+    txtarea = tk.Text(root4, width=40, height=10)
+    txtarea.grid(row=1, columnspan=2, pady=20)
+
+    #Add error messsage
+    txtarea.insert(tk.END, errormsg)
 
     #Destroy the Window
     def destroyit():
