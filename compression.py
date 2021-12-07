@@ -13,8 +13,12 @@ def select():
 
 #compresses file
 def compress(file_path):
+    arr = []
     f = open(file_path,'r')
     text = f.readlines()
     for i in text:
-        print (i)
-
+        for x in i:
+            arr.append(str(ord(x)))
+            arr.append('@')
+    compressed = ''.join(arr)
+    return compressed
