@@ -37,7 +37,7 @@ def compress_menu():
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
     label1 = tk.Label(master=root1a, width=50, height=2, text="No file selected")
-    label1.config(font=("", 20))
+    label1.config(font=("", 15))
     label1.grid(row=1, column=0, columnspan=2, sticky="nsew")
 
     #Select file and display in
@@ -83,13 +83,13 @@ def decompress_menu():
     root1b.resizable(False, False)
 
     #A label
-    label = tk.Label(master=root1b, width=20, height=2, text="Decompress:")
+    label = tk.Label(master=root1b, width=30, height=2, text="Decompress:")
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
 
     #Input field
-    inputvar = tk.Text(master=root1b, height = 5, width = 20)
-    inputvar.grid(row=1, column=0, columnspan=2, sticky="nsew")
+    inputvar = tk.Text(master=root1b, height = 10, width = 40)
+    inputvar.grid(row=1, columnspan=2, pady=20)
 
     #Run the decompression
     def run_decompress():
@@ -122,7 +122,7 @@ def encrypt_menu():
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
     label1 = tk.Label(master=root2a, width=50, height=2, text="No file selected")
-    label1.config(font=("", 20))
+    label1.config(font=("", 15))
     label1.grid(row=1, column=0, columnspan=2, sticky="nsew")
 
     #Select file and display in
@@ -168,13 +168,13 @@ def decrypt_menu():
     root2b.resizable(False, False)
 
     #A label
-    label = tk.Label(master=root2b, width=20, height=2, text="Text to decrypt:")
+    label = tk.Label(master=root2b, width=30, height=2, text="Text to decrypt:")
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
 
     #Input field
-    inputvar = tk.Text(master=root2b, height = 5, width = 20)
-    inputvar.grid(row=1, column=0, columnspan=2, sticky="nsew")
+    inputvar = tk.Text(master=root2b, height = 10, width=40)
+    inputvar.grid(row=1, columnspan=2, pady=20)
 
     #Run the decompression
     def run_decrypt():
@@ -203,7 +203,7 @@ def view(content):
     root3.resizable(False, False)
 
     #A label
-    label = tk.Label(master=root3, width=20, height=2, text="Output:")
+    label = tk.Label(master=root3, width=30, height=2, text="Output:")
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
 
@@ -223,31 +223,4 @@ def view(content):
     btn.grid(row=2, column=0, columnspan=2, sticky="nsew")
 
     root3.mainloop()
-
-def error(errormsg):
-    #Start of GUI
-    root4 = tk.Tk()
-    root4.title("Output!")
-    root4.resizable(False, False)
-
-    #A label
-    label = tk.Label(master=root4, width=20, height=2, text="Output:")
-    label.config(font=("", 20))
-    label.grid(row=0, column=0, columnspan=2, sticky="nsew")
-
-    #Error label
-    label1 = tk.Label(master=root4, width=20, height=2, text=errormsg)
-    label1.config(font=("", 20))
-    label1.grid(row=1, column=0, columnspan=2, sticky="nsew")
-
-    #Destroy the Window
-    def destroyit():
-        root4.destroy()
-
-    #Quit button
-    btn = tk.Button(master=root4, width=20, height=2, text="Quit", command=destroyit)
-    btn.grid(row=2, column=0, columnspan=2, sticky="nsew")
-
-    root4.mainloop()
-
 main()
