@@ -82,7 +82,7 @@ def decompress_menu():
     root1b.title("File Decompressor!")
     root1b.resizable(False, False)
 
-    #Some labels
+    #A label
     label = tk.Label(master=root1b, width=20, height=2, text="Decompress:")
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
@@ -167,7 +167,7 @@ def decrypt_menu():
     root2b.title("File Decryptor!")
     root2b.resizable(False, False)
 
-    #Some labels
+    #A label
     label = tk.Label(master=root2b, width=20, height=2, text="Text to decrypt:")
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
@@ -202,7 +202,7 @@ def view(content):
     root3.title("Output!")
     root3.resizable(False, False)
 
-    #Some labels
+    #A label
     label = tk.Label(master=root3, width=20, height=2, text="Output:")
     label.config(font=("", 20))
     label.grid(row=0, column=0, columnspan=2, sticky="nsew")
@@ -223,5 +223,31 @@ def view(content):
     btn.grid(row=2, column=0, columnspan=2, sticky="nsew")
 
     root3.mainloop()
+
+def error(errormsg):
+    #Start of GUI
+    root4 = tk.Tk()
+    root4.title("Output!")
+    root4.resizable(False, False)
+
+    #A label
+    label = tk.Label(master=root4, width=20, height=2, text="Output:")
+    label.config(font=("", 20))
+    label.grid(row=0, column=0, columnspan=2, sticky="nsew")
+
+    #Error label
+    label1 = tk.Label(master=root4, width=20, height=2, text=errormsg)
+    label1.config(font=("", 20))
+    label1.grid(row=1, column=0, columnspan=2, sticky="nsew")
+
+    #Destroy the Window
+    def destroyit():
+        root4.destroy()
+
+    #Quit button
+    btn = tk.Button(master=root4, width=20, height=2, text="Quit", command=destroyit)
+    btn.grid(row=2, column=0, columnspan=2, sticky="nsew")
+
+    root4.mainloop()
 
 main()
